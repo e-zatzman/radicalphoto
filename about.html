@@ -24,20 +24,20 @@
 	<div id="content">
 	<h2>About RadicalPhoto</h2>
 
-	<p>Today is <span>July 17, 2015</span>. Stay tuned, we have exciting news about our company coming in a few more weeks!</p>
+	<p>Today is <span id="date_text">July 17, 2015</span>. Stay tuned, we have exciting news about our company coming in a few more weeks!</p>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
 
 	<h3>Our Team</h3>
 
 	<p id="bios">
-		<a href="sheila.html">Sheila</a> (President) | 
-		<a href="frank.html">Frank</a> (Vice President) | 
-		<a href="joanne.html">Joanne</a> (Senior Photographer)
+		<a id="shiela" href="sheila.html">Sheila</a> (President) | 
+		<a id="frank" href="frank.html">Frank</a> (Vice President) | 
+		<a id="jo" href="joanne.html">Joanne</a> (Senior Photographer)
 	</p> 
 
-	<div id="bio"></div>
-
+	<div></div>
+        <img id="bio" src="images/bio1.jpg" alt="staff">
 	</div>
 
 	<div id="footer">
@@ -46,5 +46,50 @@
 
 </div>
 
+
+<script src="js/main.js"></script>
+<script>
+var current_date = document.getElementById("date_text");
+var currentdate = new Date();
+var currentday = currentdate.getDate();
+var currentmonth = currentdate.getMonth();
+var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var currentyear = currentdate.getFullYear();
+
+current_date.innerHTML = month[currentmonth] + " " + currentday + ", " + currentyear;
+    
+var staff = document.getElementById("bio");
+var shiela = document.getElementById("shiela");
+var frank = document.getElementById("frank");
+var jo = document.getElementById("jo");
+ 
+bio.style.display = "none";
+    
+shiela.onmouseover = function () {
+    bio.style.display = "block";
+    bio.src = "images/bio1.jpg";       
+}
+
+frank.onmouseover = function () {
+    bio.style.display = "block";
+    bio.src = "images/bio3.jpg";       
+}
+
+jo.onmouseover = function () {
+    bio.style.display = "block";
+    bio.src = "images/bio2.jpg";       
+}
+
+shiela.onmouseout = function () {
+    bio.style.display = "none";       
+}
+frank.onmouseout = function () {
+    bio.style.display = "none";       
+}
+jo.onmouseout = function () {
+    bio.style.display = "none";       
+}
+    
+</script>
 </body>
 </html>
